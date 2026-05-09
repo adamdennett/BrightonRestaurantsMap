@@ -1,0 +1,193 @@
+venue_idx,name,profile_url,venue_url,address,postcode,lat,lon,hove,sussex,geocode_source
+0,terre à terre,https://restaurantsbrighton.co.uk/terre-a-terre/,https://restaurantsbrighton.co.uk/terre-a-terre/,"71 East St, Brighton, The City of Brighton and Hove BN1 1HQ, UK",BN1 1HQ,50.820397,-0.139095,False,False,ONSPD via venue page postcode
+1,Kindling,https://restaurantsbrighton.co.uk/kindling-brighton/,https://restaurantsbrighton.co.uk/kindling-brighton/,"69 East Street, Brighton BN1 1HQ",BN1 1HQ,50.820397,-0.139095,False,False,ONSPD via venue page postcode
+2,Embers,https://restaurantsbrighton.co.uk/embers-brighton/,https://restaurantsbrighton.co.uk/embers-brighton/,"42 Meeting House Lane, Brighton, BN1 1HB",BN1 1HB,50.822154,-0.140729,False,False,ONSPD via venue page postcode
+3,Burnt Orange,https://restaurantsbrighton.co.uk/burnt-orange-brighton/,https://restaurantsbrighton.co.uk/burnt-orange-brighton/,"59 Middle Street, Brighton,East Sussex, BN1 1AL",BN1 1AL,50.821362,-0.142961,False,False,ONSPD via venue page postcode
+4,Bonsai Plant Kitchen,https://restaurantsbrighton.co.uk/bonsai-plant-kitchen/,https://restaurantsbrighton.co.uk/bonsai-plant-kitchen/,"44/45 Baker Street Brighton, BN1 4JN",BN1 4JN,50.831726,-0.135307,False,False,ONSPD via venue page postcode
+5,Indian Summer,https://restaurantsbrighton.co.uk/indian-summer-brighton-restaurant/,https://restaurantsbrighton.co.uk/indian-summer-brighton-restaurant/,"70 East Street, Brighton BN1 1HQ",BN1 1HQ,50.820397,-0.139095,False,False,ONSPD via venue page postcode
+6,Cyan at The Grand Brighton,https://restaurantsbrighton.co.uk/cyan-brighton/,https://restaurantsbrighton.co.uk/cyan-brighton/,"The Grand, 97-99 Kings Rd, Brighton BN1 2FW",BN1 2FW,50.821554,-0.147326,False,False,ONSPD via venue page postcode
+7,English's of Brighton,https://restaurantsbrighton.co.uk/englishs-restaurant-brighton/,https://restaurantsbrighton.co.uk/englishs-restaurant-brighton/,"29-31 East Street, Brighton, East Sussex BN1 1HL",BN1 1HL,50.821465,-0.139266,False,False,ONSPD via venue page postcode
+8,Furna,https://restaurantsbrighton.co.uk/furna-brighton/,https://restaurantsbrighton.co.uk/furna-brighton/,"6 New Rd, Brighton BN1 1UF",BN1 1UF,50.823502,-0.139568,False,False,ONSPD via venue page postcode
+9,Il Bistro,https://restaurantsbrighton.co.uk/il-bistro-brighton/,https://restaurantsbrighton.co.uk/il-bistro-brighton/,"6 Market St, Brighton BN1 1HH",BN1 1HH,50.821460,-0.139763,False,False,ONSPD via venue page postcode
+10,Carne,https://restaurantsbrighton.co.uk/carne/,https://restaurantsbrighton.co.uk/carne/,63 Church Road Hove BN3 2BD,BN3 2BD,50.827368,-0.166195,False,False,ONSPD via venue page postcode
+11,Wild Flor,https://restaurantsbrighton.co.uk/wild-flor-hove/,https://restaurantsbrighton.co.uk/wild-flor-hove/,"Wild Flor, 42 Church Road, Hove, BN3 2FN",BN3 2FN,50.827157,-0.167623,True,False,ONSPD via venue page postcode
+12,Cin Cin,https://restaurantsbrighton.co.uk/cin-cin-brighton/,https://restaurantsbrighton.co.uk/cin-cin-brighton/,"60 Western Rd, Brighton and Hove, Hove BN3 1JD",BN3 1JD,50.825843,-0.160958,False,False,ONSPD via venue page postcode
+13,Wabi Sabi,https://restaurantsbrighton.co.uk/wabi-sabi/,https://restaurantsbrighton.co.uk/wabi-sabi/,"121 Church Rd, Hove, Brighton and Hove, Hove BN3 2AF, United Kingdom",BN3 2AF,50.828020,-0.171665,False,False,ONSPD via venue page postcode
+14,Lost in The Lanes,https://restaurantsbrighton.co.uk/lost-in-the-lanes-brighton/,https://restaurantsbrighton.co.uk/lost-in-the-lanes-brighton/,10 Nile Street Brighton BN1 1HW,BN1 1HW,50.821456,-0.140615,False,False,ONSPD via venue page postcode
+15,The Coal Shed,https://restaurantsbrighton.co.uk/coal-shed-brighton/,https://restaurantsbrighton.co.uk/coal-shed-brighton/,"Clarence House, 30-31 North St, Brighton BN1 1EB",BN1 1EB,50.822449,-0.140064,False,False,ONSPD via venue page postcode
+16,Pearly Cow,https://restaurantsbrighton.co.uk/pearly-cow-brighton/,https://restaurantsbrighton.co.uk/pearly-cow-brighton/,"Pearly Cow, Brighton 123 Kings Road Brighton BN1 2FY",BN1 2FY,50.821734,-0.149619,False,False,ONSPD via venue page postcode
+17,Market,https://restaurantsbrighton.co.uk/market-restaurant-bar-hove/,https://restaurantsbrighton.co.uk/market-restaurant-bar-hove/,"42 Western Road, Hove BN3 1JD",BN3 1JD,50.825843,-0.160958,True,False,ONSPD via venue page postcode
+18,Fourth and Church,https://restaurantsbrighton.co.uk/fourth-church-hove/,https://restaurantsbrighton.co.uk/fourth-church-hove/,"84 Church Road, Hove, BN3 2EB",BN3 2EB,50.827641,-0.171580,True,False,ONSPD via venue page postcode
+19,etch.,https://restaurantsbrighton.co.uk/etch-brighton/,https://restaurantsbrighton.co.uk/etch-brighton/,"214-216 Church Road, Hove, BN3 2DJ",BN3 2DJ,50.828460,-0.177569,False,False,ONSPD via venue page postcode
+20,Andalucia Restaurant,https://restaurantsbrighton.co.uk/andalucia/,https://restaurantsbrighton.co.uk/andalucia/,60 Ferring StreetWorthingWest Sussex BN12 5JP,BN12 5JP,50.815475,-0.446761,False,True,ONSPD via venue page postcode
+21,Crabshack,https://restaurantsbrighton.co.uk/crabshack-worthing/,https://restaurantsbrighton.co.uk/crabshack-worthing/,"2 Marine Parade, Worthing BN11 3PN",BN11 3PN,50.810706,-0.364391,False,True,ONSPD via venue page postcode
+22,Poco,https://restaurantsbrighton.co.uk/poco-alfriston/,https://restaurantsbrighton.co.uk/poco-alfriston/,"3 High St, Alfriston, Polegate, BN26 5TY",BN26 5TY,50.807408,0.156629,False,True,ONSPD via venue page postcode
+23,Saltio Mexican Worthing,,https://www.saltiomexican.com/,,BN11 3PT,50.810117,-0.368431,False,True,ONSPD via Nominatim (Sussex bbox)
+24,Squisito,,https://www.squisito.co.uk/,,,,,False,True,Nominatim mismatch (GU21 4SY)
+25,Le Flamant,https://restaurantsbrighton.co.uk/le-flamant/,https://restaurantsbrighton.co.uk/le-flamant/,64 High Street Lindfield Haywards Heath West Sussex RH16 2HL,RH16 2HL,51.012806,-0.081051,False,True,ONSPD via venue page postcode
+26,Terra at Tottington Manor,https://restaurantsbrighton.co.uk/terra-restaurant/,https://restaurantsbrighton.co.uk/terra-restaurant/,"Tottington Manor, Edburton Rd, Henfield, BN5 9LJ",BN5 9LJ,50.891093,-0.272994,False,True,ONSPD via venue page postcode
+27,The Fig Tree,https://restaurantsbrighton.co.uk/the-fig-tree-hurstpierpoint/,https://restaurantsbrighton.co.uk/the-fig-tree-hurstpierpoint/,"120 High St, Hurstpierpoint, Hassocks BN6 9PX",BN6 9PX,50.932394,-0.175089,False,True,ONSPD via venue page postcode
+28,Village Pizza Kitchen,https://restaurantsbrighton.co.uk/village-pizza-kitchen/,https://restaurantsbrighton.co.uk/village-pizza-kitchen/,"155 High Street, Hurstpierpoint, BN6 9PU",BN6 9PU,50.932565,-0.174855,False,True,ONSPD via venue page postcode
+29,Artelium,https://restaurantsbrighton.co.uk/artelium/,https://restaurantsbrighton.co.uk/artelium/,"Artelium Wine Estate Streat Lane, Hassocks East Sussex BN6 8SA",BN6 8SA,50.935054,-0.076396,False,True,ONSPD via venue page postcode
+30,Babylon Eco Centre,,https://babylon.eco/,,TN22 3BH,51.031489,0.091993,False,True,ONSPD via Nominatim postcode
+31,Crocodile Cafe,,https://www.crocodilecafe.uk/,,BN2 8LH,50.800607,-0.037276,False,True,ONSPD via Nominatim postcode
+32,Orla Restaurant & Rooms,,https://www.orlalindfield.co.uk/,,,,,False,True,
+33,Chalk at Wiston Estate,,https://www.wistonestate.com/chalk-restaurant/,,BN44 3DD,50.906344,-0.367075,False,True,ONSPD via Nominatim (Sussex bbox)
+34,Safari Pizza Co,,https://safaripizzas.co.uk/,,,,,False,True,
+35,Ginger Fox,https://restaurantsbrighton.co.uk/ginger-fox/,https://restaurantsbrighton.co.uk/ginger-fox/,"The Ginger Fox, Muddleswood Road, Henfield Road, Albourne, West Sussex, BN6 9EA.",BN6 9EA,50.913366,-0.214769,False,True,ONSPD via venue page postcode
+36,Morley's Bistro,https://restaurantsbrighton.co.uk/morleys-bistro-hurstpierpoint/,https://restaurantsbrighton.co.uk/morleys-bistro-hurstpierpoint/,"42 High St, Hurstpierpoint, Hassocks BN6 9RG",BN6 9RG,50.933513,-0.178802,False,True,ONSPD via venue page postcode
+37,The Woodcote Graffham,,https://www.thewoodcote.com/,,GU28 0NT,50.9503827,-0.6837554,False,True,Nominatim (Sussex bbox)
+38,Dill,https://restaurantsbrighton.co.uk/dill-lewes/,https://restaurantsbrighton.co.uk/dill-lewes/,,BN7 2BP,50.873813,0.019740,False,True,ONSPD via venue page postcode
+39,The Pass,https://restaurantsbrighton.co.uk/the-pass-restaurant/,https://restaurantsbrighton.co.uk/the-pass-restaurant/,"Brighton Rd, Lower Beeding, Horsham RH13 6PS",RH13 6PS,51.014676,-0.262034,False,True,ONSPD via venue page postcode
+40,Jo & Co,https://restaurantsbrighton.co.uk/jo-and-co/,https://restaurantsbrighton.co.uk/jo-and-co/,"115 Church Road, Hove, BN3 2AF",BN3 2AF,50.828020,-0.171665,False,False,ONSPD via venue page postcode
+41,Moksha,https://restaurantsbrighton.co.uk/moksha-caffe-brighton/,https://restaurantsbrighton.co.uk/moksha-caffe-brighton/,4-5 York Place Brighton East Sussex BN1 4GU,BN1 4GU,50.828646,-0.135785,False,False,ONSPD via venue page postcode
+42,Starfish & Coffee,https://restaurantsbrighton.co.uk/starfish-and-coffee-cafe-brighton/,https://restaurantsbrighton.co.uk/starfish-and-coffee-cafe-brighton/,"32 Egremont Place, BN2 0GA Brighton",BN2 0GA,50.822748,-0.129148,False,False,ONSPD via venue page postcode
+43,Oeuf Cafe,https://restaurantsbrighton.co.uk/oeuf-cafe-hove/,https://restaurantsbrighton.co.uk/oeuf-cafe-hove/,"8 Third Avenue Hove, BN3 2PX",BN3 2PX,50.826000,-0.170934,True,False,ONSPD via venue page postcode
+44,Mange Tout,https://restaurantsbrighton.co.uk/mange-tout-brighton/,https://restaurantsbrighton.co.uk/mange-tout-brighton/,"81 Trafalgar Street, Brighton, BN1 4EB",BN1 4EB,50.828445,-0.139002,False,False,ONSPD via venue page postcode
+45,FIKA,https://restaurantsbrighton.co.uk/sandwich-shops-in-brighton/,https://restaurantsbrighton.co.uk/sandwich-shops-in-brighton/,,BN2 1BX,50.819244,-0.126406,False,False,ONSPD via Nominatim (Sussex bbox)
+46,Dishoom Permit Room,https://restaurantsbrighton.co.uk/dishoom-permit-room-brighton/,https://restaurantsbrighton.co.uk/dishoom-permit-room-brighton/,,BN1 1HL,50.821465,-0.139266,False,False,ONSPD via venue page postcode
+47,Nord Hove,,https://www.instagram.com/nordhove/,,BN1 2PA,50.825227,-0.154380,True,False,ONSPD via Nominatim postcode
+48,Black Mocha,,https://www.instagram.com/blackmochabrighton/,,BN1 4AP,50.827122,-0.139523,False,False,ONSPD via Nominatim postcode
+49,Foodilic,https://restaurantsbrighton.co.uk/foodilic-brighton/,https://restaurantsbrighton.co.uk/foodilic-brighton/,"163 Western Road, Brighton, BN1 2BB",BN1 2BB,50.824431,-0.148789,False,False,ONSPD via venue page postcode
+50,River Cafe and Bistro,https://restaurantsbrighton.co.uk/river-cafe-bistro-shoreham/,https://restaurantsbrighton.co.uk/river-cafe-bistro-shoreham/,6 High Street Shoreham-by-Sea West Sussex BN43 5DA,BN43 5DA,50.831893,-0.275634,False,False,ONSPD via venue page postcode
+51,Â Table,https://restaurantsbrighton.co.uk/a-table-brighton/,https://restaurantsbrighton.co.uk/a-table-brighton/,75 St. James's Street BN2 1PA Brighton,BN2 1PA,50.820254,-0.131037,False,False,ONSPD via venue page postcode
+52,Cafe Rust,,https://www.instagram.com/cafe_rust/,,BN2 1EA,50.819140,-0.123500,False,False,ONSPD via Nominatim postcode
+53,Baked,https://restaurantsbrighton.co.uk/baked-hove/,https://restaurantsbrighton.co.uk/baked-hove/,"69 Church Road, Hove BN3 2BB",BN3 2BB,50.827508,-0.167283,True,False,ONSPD via venue page postcode
+54,East Brighton Cafe,,https://www.brighton-hove.gov.uk/libraries-leisure-and-arts/parks-and-green-spaces/east-brighton-park,,BN1 1HP,50.820285,-0.139383,True,False,ONSPD via Nominatim postcode
+55,Trading Post Coffee,https://restaurantsbrighton.co.uk/trading-post-coffee-brighton/,https://restaurantsbrighton.co.uk/trading-post-coffee-brighton/,"36 Ship St, Brighton, BN1 1AB",BN1 1AB,50.822959,-0.141790,False,False,ONSPD via venue page postcode
+56,MEO,https://restaurantsbrighton.co.uk/meo-brighton/,https://restaurantsbrighton.co.uk/meo-brighton/,"39 St James's St, Kemptown, Brighton and Hove, Brighton BN2 1RG",BN2 1RG,50.820743,-0.132394,False,False,ONSPD via venue page postcode
+57,Burger & Lobster,https://restaurantsbrighton.co.uk/burger-and-lobster/,https://restaurantsbrighton.co.uk/burger-and-lobster/,15 Market Street Brighton BN1 1HH,BN1 1HH,50.821460,-0.139763,False,False,ONSPD via venue page postcode
+58,Earth & Stars,https://restaurantsbrighton.co.uk/earth-and-stars-brighton/,https://restaurantsbrighton.co.uk/earth-and-stars-brighton/,"46 WINDSOR STREET, BRIGHTON, EAST SUSSEX BN1 1RJ",BN1 1RJ,50.824543,-0.142466,False,False,ONSPD via venue page postcode
+59,Majahma,https://restaurantsbrighton.co.uk/majahma-tiffin-delivery-brighton/,https://restaurantsbrighton.co.uk/majahma-tiffin-delivery-brighton/,,,,,False,False,
+60,Pink Moon,https://restaurantsbrighton.co.uk/small-plates-brighton/,https://restaurantsbrighton.co.uk/small-plates-brighton/,,BN1 1AF,50.822545,-0.141565,False,False,ONSPD via Nominatim (Sussex bbox)
+61,Oowee Vegan,https://restaurantsbrighton.co.uk/oowee-vegan/,https://restaurantsbrighton.co.uk/oowee-vegan/,"23 Market St, Brighton and Hove, Brighton BN1 1HH",BN1 1HH,50.821460,-0.139763,False,False,ONSPD via venue page postcode
+62,Cielo Cakery,,https://cielocakery.co.uk/,,,,,False,False,
+63,Siam Siam,,https://www.siamsiambrighton.com/,,BN1 2HG,50.822725,-0.151227,False,False,ONSPD via Nominatim postcode
+64,Planet India,https://restaurantsbrighton.co.uk/planet-india-brighton/,https://restaurantsbrighton.co.uk/planet-india-brighton/,"4 Richmond Parade, BN2 9PH",BN2 9PH,50.827128,-0.133659,False,False,ONSPD via venue page postcode
+65,Food For Friends,https://restaurantsbrighton.co.uk/food-for-friends/,https://restaurantsbrighton.co.uk/food-for-friends/,"17-18 Prince Albert Street Brighton, East Sussex BN1 1HF",BN1 1HF,50.821274,-0.140849,False,False,ONSPD via venue page postcode
+66,Hope & Ruin (Beelzebab),,https://www.beelzebab.com/,,BN1 3WA,50.824604,-0.143230,False,False,ONSPD via Nominatim (Sussex bbox)
+67,Manjus,https://restaurantsbrighton.co.uk/manjus-brighton/,https://restaurantsbrighton.co.uk/manjus-brighton/,"6 Trafalgar St, Brighton BN1 4EQ",BN1 4EQ,50.828000,-0.137018,False,False,ONSPD via venue page postcode
+68,Iydea Brighton,,https://www.instagram.com/iydeabrighton/,,BN1 4AL,50.826267,-0.138904,False,False,ONSPD via Nominatim postcode
+69,We Love Falafel,,http://welovefalafel.co.uk/,,BN1 4EP,50.827507,-0.137705,False,False,ONSPD via Nominatim postcode
+70,The Roundhill,https://restaurantsbrighton.co.uk/the-roundhill-brighton/,https://restaurantsbrighton.co.uk/the-roundhill-brighton/,100 Ditchling Road Brighton BN1 4SG,BN1 4SG,50.836080,-0.133358,False,False,ONSPD via venue page postcode
+71,Purezza,https://restaurantsbrighton.co.uk/purezza-brighton-vegan-pizza/,https://restaurantsbrighton.co.uk/purezza-brighton-vegan-pizza/,"12 St James's St, Kemptown, Brighton BN2 1RE",BN2 1RE,50.821072,-0.135178,False,False,ONSPD via venue page postcode
+72,Happy Maki,https://restaurantsbrighton.co.uk/happy-maki/,https://restaurantsbrighton.co.uk/happy-maki/,,BN1 1UN,50.824925,-0.139355,False,False,ONSPD via Nominatim postcode
+73,The Grand & Cyan Restaurant,https://restaurantsbrighton.co.uk/the-grand-brighton/,https://restaurantsbrighton.co.uk/the-grand-brighton/,The Grand 97-99 King's Road Brighton BN1 2FW,BN1 2FW,50.821554,-0.147326,False,False,ONSPD via venue page postcode
+74,Clementine and Co,,https://www.clementineandco.co.uk/,,,,,False,False,Nominatim mismatch (SO50 7QG)
+75,Blossoms Bar,https://restaurantsbrighton.co.uk/blossoms-brighton/,https://restaurantsbrighton.co.uk/blossoms-brighton/,"17-18 BRIGHTON SQUARE, BRIGHTON, BN1 1HD",BN1 1HD,50.822120,-0.140333,False,False,ONSPD via venue page postcode
+76,FUMI,https://restaurantsbrighton.co.uk/fumi-brighton/,https://restaurantsbrighton.co.uk/fumi-brighton/,"1 Circus St, Brighton, Brighton and Hove, Brighton BN2 9AS, United Kingdom",BN2 9AS,50.825005,-0.134553,False,False,ONSPD via venue page postcode
+77,Bar 50ml,https://restaurantsbrighton.co.uk/bar-50ml-brighton/,https://restaurantsbrighton.co.uk/bar-50ml-brighton/,"10 St Georges Place, Brighton BN1 4GB",BN1 4GB,50.827610,-0.135713,False,False,ONSPD via venue page postcode
+78,The Plotting Parlour,https://restaurantsbrighton.co.uk/plotting-parlour-brighton/,https://restaurantsbrighton.co.uk/plotting-parlour-brighton/,"6 Steine St, Brighton BN2 1TE",BN2 1TE,50.820434,-0.136098,False,False,ONSPD via venue page postcode
+79,Twisted Lemon,https://restaurantsbrighton.co.uk/twisted-lemon-cocktail-bar-brighton/,https://restaurantsbrighton.co.uk/twisted-lemon-cocktail-bar-brighton/,"41 Middle St, Brighton BN1 1AL",BN1 1AL,50.821362,-0.142961,False,False,ONSPD via venue page postcode
+80,Kemptown Klub,https://restaurantsbrighton.co.uk/the-kemptown-klub/,https://restaurantsbrighton.co.uk/the-kemptown-klub/,"75 St George's Rd, Kemptown, Brighton BN2 1EF",BN2 1EF,50.817605,-0.118053,False,False,ONSPD via venue page postcode
+81,Apiary,https://restaurantsbrighton.co.uk/apiary-brighton/,https://restaurantsbrighton.co.uk/apiary-brighton/,"50 Norfolk Square, Brighton and Hove, Brighton BN1 2PA",BN1 2PA,50.825227,-0.154380,False,False,ONSPD via venue page postcode
+82,Bar Valentino,https://restaurantsbrighton.co.uk/bar-valentino-brighton/,https://restaurantsbrighton.co.uk/bar-valentino-brighton/,"7 New Rd, Brighton BN1 1UF",BN1 1UF,50.823502,-0.139568,False,False,ONSPD via venue page postcode
+83,Brighton Rocks,https://restaurantsbrighton.co.uk/brighton-rocks-bar/,https://restaurantsbrighton.co.uk/brighton-rocks-bar/,"6 Rock Place, Brighton, BN2 1PF",BN2 1PF,50.819831,-0.131039,False,False,ONSPD via venue page postcode
+84,The Golden Pineapple,https://restaurantsbrighton.co.uk/the-golden-pineapple-brighton/,https://restaurantsbrighton.co.uk/the-golden-pineapple-brighton/,"14 Ship Street Brighton, BN1 1AD",BN1 1AD,50.821691,-0.142167,False,False,ONSPD via venue page postcode
+85,Plateau,https://restaurantsbrighton.co.uk/plateau-brighton/,https://restaurantsbrighton.co.uk/plateau-brighton/,"1 Bartholowmews, Brighton, BN1 1HG",BN1 1HG,50.820995,-0.139682,False,False,ONSPD via venue page postcode
+86,Bohemia,https://restaurantsbrighton.co.uk/bohemia-brighton/,https://restaurantsbrighton.co.uk/bohemia-brighton/,"54-55 Meeting House Ln, Brighton BN1 1HB",BN1 1HB,50.822154,-0.140729,False,False,ONSPD via venue page postcode
+87,The Signalman,https://restaurantsbrighton.co.uk/signalman-brighton/,https://restaurantsbrighton.co.uk/signalman-brighton/,"76 DITCHLING RISE, BRIGHTON BN1 4QQ",BN1 4QQ,50.836404,-0.135618,False,False,ONSPD via venue page postcode
+88,The Robin Hood,https://restaurantsbrighton.co.uk/robin-hood-brighton/,https://restaurantsbrighton.co.uk/robin-hood-brighton/,"1-3 Norfolk Place, Brighton, East Sussex, BN1 2PF",BN1 2PF,50.824751,-0.155549,False,False,ONSPD via venue page postcode
+89,The Lion & Lobster,https://restaurantsbrighton.co.uk/lion-lobster-pub-brighton/,https://restaurantsbrighton.co.uk/lion-lobster-pub-brighton/,"24 Sillwood Street, Brighton, BN1 2PS",BN1 2PS,50.823874,-0.154675,False,False,ONSPD via venue page postcode
+90,The Cleveland Arms,https://restaurantsbrighton.co.uk/the-cleveland-arms-brighton/,https://restaurantsbrighton.co.uk/the-cleveland-arms-brighton/,"27A Cleveland Road, Brighton, East Sussex, BN1 6FF",BN1 6FF,50.841599,-0.138195,False,False,ONSPD via venue page postcode
+91,The Farm Tavern,https://restaurantsbrighton.co.uk/the-farm-tavern-hove/,https://restaurantsbrighton.co.uk/the-farm-tavern-hove/,"13 Farm Rd, Hove BN3 1FB",BN3 1FB,50.826786,-0.159146,True,False,ONSPD via venue page postcode
+92,The Bell Tower,https://restaurantsbrighton.co.uk/bell-tower-brighton/,https://restaurantsbrighton.co.uk/bell-tower-brighton/,1 Arundel Road BN2 5TE Brighton,BN2 5TE,50.815831,-0.107704,False,False,ONSPD via venue page postcode
+93,Ladies Mile,https://restaurantsbrighton.co.uk/ladies-mile-pub-patcham/,https://restaurantsbrighton.co.uk/ladies-mile-pub-patcham/,Mackie Avenue Patcham Brighton BN1 8RA,BN1 8RA,50.864987,-0.143616,False,False,ONSPD via venue page postcode
+94,The Howard,,https://www.thehowardbrighton.co.uk/,,BN2 9TP,50.831238,-0.126976,False,False,ONSPD via Nominatim (Sussex bbox)
+95,Sussex Yeoman,,https://www.instagram.com/thesussexyeoman/,,BN1 3LU,50.828715,-0.143323,False,False,ONSPD via Nominatim (Sussex bbox)
+96,Argyle Arms,,https://www.instagram.com/theargylearmsbrighton/,,BN1 4QB,50.834046,-0.141506,False,False,ONSPD via Nominatim (Sussex bbox)
+97,Bedford Tavern,,https://www.instagram.com/bedfordtavern/?hl=en-gb,,BN1 2PG,50.823597,-0.155949,False,False,ONSPD via Nominatim (Sussex bbox)
+98,Mrs Fitzherberts,,https://mrsfitzherberts.co.uk/,,BN1 1UG,50.823701,-0.139063,False,False,ONSPD via Nominatim (Sussex bbox)
+99,Better Half,https://restaurantsbrighton.co.uk/better-half-pub/,https://restaurantsbrighton.co.uk/better-half-pub/,"1 Hove Place, Hove, East Sussex BN3 2RG",BN3 2RG,50.825578,-0.174955,False,False,ONSPD via venue page postcode
+100,The Westbourne,https://restaurantsbrighton.co.uk/the-westbourne/,https://restaurantsbrighton.co.uk/the-westbourne/,"The Westbourne, 90 Portland Road, Hove, BN3 5DN",BN3 5DN,50.832817,-0.182824,False,False,ONSPD via venue page postcode
+101,The North Star,https://restaurantsbrighton.co.uk/the-north-star/,https://restaurantsbrighton.co.uk/the-north-star/,"2-3 Pavilion Buildings, Brighton, BN1 1EE",BN1 1EE,50.821994,-0.138236,False,False,ONSPD via venue page postcode
+102,Longman,https://restaurantsbrighton.co.uk/the-longman-pub-brighton/,https://restaurantsbrighton.co.uk/the-longman-pub-brighton/,"The Longman, 2-10 Wilmington Way, Patcham, Brighton, BN1 8JH",BN1 8JH,50.859765,-0.140228,False,False,ONSPD via venue page postcode
+103,Basketmakers Arms,https://restaurantsbrighton.co.uk/basketmakers-arms-brighton/,https://restaurantsbrighton.co.uk/basketmakers-arms-brighton/,12 Gloucester Road Brighton East Sussex BN1 4AD,BN1 4AD,50.826554,-0.136578,False,False,ONSPD via venue page postcode
+104,La Choza,https://restaurantsbrighton.co.uk/la-choza/,https://restaurantsbrighton.co.uk/la-choza/,"36 Gloucester Road, Brighton BN1 4AQ",BN1 4AQ,50.826920,-0.139247,False,False,ONSPD via venue page postcode
+105,Fatto a Mano,https://restaurantsbrighton.co.uk/fatto-a-mano-north-laine/,https://restaurantsbrighton.co.uk/fatto-a-mano-north-laine/,"Kensington Gardens, Brighton",BN1 4JF,50.832592,-0.137360,False,False,ONSPD via Nominatim (Sussex bbox)
+106,Ask Italian,,https://www.askitalian.co.uk/italian/restaurants/brighton,,BN1 1AE,50.821384,-0.141753,False,False,ONSPD via Nominatim (Sussex bbox)
+107,Nostos,https://restaurantsbrighton.co.uk/nostos-hove/,https://restaurantsbrighton.co.uk/nostos-hove/,"63a Holland Rd, Hove, BN3 1BA",BN3 1BA,50.826636,-0.161594,True,False,ONSPD via venue page postcode
+108,Shepherd & Dog,https://restaurantsbrighton.co.uk/shepherd-dog-fulking-henfield/,https://restaurantsbrighton.co.uk/shepherd-dog-fulking-henfield/,"The St, Fulking, Henfield, W. Sussex BN5 9LU",BN5 9LU,50.888882,-0.227506,False,False,ONSPD via venue page postcode
+109,Bagelman,,https://www.bagelman.co.uk/,,BN2 1TH,50.820825,-0.135273,False,False,ONSPD via Nominatim (Sussex bbox)
+110,Shelter Hall,https://restaurantsbrighton.co.uk/shelter-hall-brighton/,https://restaurantsbrighton.co.uk/shelter-hall-brighton/,"Kings Road Arches, Shelter Hall, Brighton BN1 1NB",BN1 1NB,50.819992,-0.142235,False,False,ONSPD via venue page postcode
+111,Donatello,https://restaurantsbrighton.co.uk/donatello-brighton/,https://restaurantsbrighton.co.uk/donatello-brighton/,,BN1 1HJ,50.821686,-0.139839,False,False,ONSPD via venue page postcode
+112,The Chimney House,https://restaurantsbrighton.co.uk/chimney-house-brighton/,https://restaurantsbrighton.co.uk/chimney-house-brighton/,"28 Upper Hamilton Road, Brighton BN1 5DF",BN1 5DF,50.835039,-0.148127,False,False,ONSPD via venue page postcode
+113,History Pizzeria,,https://historypizzeria.co.uk/,,BN3 2JQ,50.826314,-0.162871,False,False,ONSPD via Nominatim (Sussex bbox)
+114,Good Companions,,https://www.goodcompanions.pub/,,BN1 3TE,50.831952,-0.147980,False,False,ONSPD via Nominatim (Sussex bbox)
+115,Wood X Coal,,,,,50.8172888,-0.1241377,False,False,"Nominatim (Sussex bbox, no postcode)"
+116,Sabai,https://restaurantsbrighton.co.uk/sabai-thai-brighton/,https://restaurantsbrighton.co.uk/sabai-thai-brighton/,"165-169 Princes House, Princes Place, North St, Brighton BN1 1EA",BN1 1EA,50.822634,-0.139460,False,False,ONSPD via venue page postcode
+117,Blend & Brew,,https://blendbrewbrighton.co.uk/,,BN1 4ED,50.828290,-0.139434,False,False,ONSPD via Nominatim (Sussex bbox)
+118,The Big Bowl,https://restaurantsbrighton.co.uk/the-big-bowl-brighton/,https://restaurantsbrighton.co.uk/the-big-bowl-brighton/,"54 Preston St, Brighton BN1 2HE",BN1 2HE,50.824016,-0.150580,False,False,ONSPD via venue page postcode
+119,Flour Pot Bakery,https://restaurantsbrighton.co.uk/flour-pot-bakery-elm-grove-brighton/,https://restaurantsbrighton.co.uk/flour-pot-bakery-elm-grove-brighton/,124 Elm Grove BN2 3DB,BN2 3DB,50.831302,-0.123097,False,False,ONSPD via venue page postcode
+120,Casazul,https://restaurantsbrighton.co.uk/casazul-brighton/,https://restaurantsbrighton.co.uk/casazul-brighton/,"Open Market, 21 Marshalls Row, Brighton BN1 4JU",BN1 4JU,50.831509,-0.135217,False,False,ONSPD via venue page postcode
+121,Thatched Inn,,https://www.thatchedinn.co.uk/,,BN6 8DD,50.927943,-0.136429,False,False,ONSPD via Nominatim (Sussex bbox)
+122,Salt Shed,,https://www.instagram.com/saltshed/,,BN1 1UD,50.824082,-0.138380,False,False,ONSPD via Nominatim (Sussex bbox)
+123,Moon By Sea,,https://www.instagram.com/themoonbysea/,,BN1 2GG,50.823260,-0.149985,False,False,ONSPD via Nominatim (Sussex bbox)
+124,"The Eight Bells, Jevington",https://restaurantsbrighton.co.uk/eight-bells-jevington/,https://restaurantsbrighton.co.uk/eight-bells-jevington/,"Jevington Rd, Jevington, Polegate, BN26 5QB, United Kingdom",BN26 5QB,50.794032,0.215994,False,True,ONSPD via venue page postcode
+125,"The Star Inn, Waldron",,https://www.instagram.com/thestarwaldron/,,TN21 0RA,50.951829,0.204783,False,True,ONSPD via Nominatim (Sussex bbox)
+126,"The Thatched Inn, Hassocks",,https://www.instagram.com/thatchedinnhassocks/,,BN6 8BB,50.924656,-0.131068,False,True,ONSPD via Nominatim (Sussex bbox)
+127,The Sussex Ox,https://restaurantsbrighton.co.uk/the-sussex-ox-pub/,https://restaurantsbrighton.co.uk/the-sussex-ox-pub/,Milton Street East Sussex BN26 5RL,BN26 5RL,50.815523,0.172037,False,True,ONSPD via venue page postcode
+128,The Hurstwood,https://restaurantsbrighton.co.uk/harveys-brewery/,https://restaurantsbrighton.co.uk/harveys-brewery/,,TN22 4AH,51.010958,0.128763,False,True,ONSPD via Nominatim (Sussex bbox)
+129,The Seaview,,https://the-seaview.co.uk/,,BN13 1JB,50.826944,-0.396467,False,True,"ONSPD via Nominatim (Sussex bbox, retry)"
+130,Barley Mow Selmeston,,https://thebarleymow.uk/,,BN26 6UE,50.839957,0.138314,False,True,ONSPD via Nominatim (Sussex bbox)
+131,Jolly Sportsman,https://restaurantsbrighton.co.uk/jolly-sportsman/,https://restaurantsbrighton.co.uk/jolly-sportsman/,"The Jolly Sportsman, Chapel Lane, East Chiltington BN73BA",BN7 3BA,50.920337,-0.050653,False,True,ONSPD via venue page postcode
+132,The Piltdown Man,,https://piltdownman.co.uk/,,TN22 3FN,50.9808399,0.0497322,False,True,Nominatim (Sussex bbox)
+133,Chequer Inn Steyning,,https://www.chequerinn.co.uk/,,BN44 3RE,50.889452,-0.330598,False,True,ONSPD via Nominatim (Sussex bbox)
+134,George at Burpham,,https://www.georgeatburpham.co.uk/,,BN18 9RR,50.870343,-0.523841,False,True,ONSPD via Nominatim (Sussex bbox)
+135,The Royal Oak Lewes,,https://www.theroyaloaklewes.co.uk/,,BN7 2DB,50.872428,0.010868,False,True,ONSPD via Nominatim (Sussex bbox)
+136,The Dorset Lewes,,https://www.thedorsetlewes.co.uk/index,,BN7 2RD,50.874836,0.018818,False,True,ONSPD via Nominatim (Sussex bbox)
+137,"The Ram Inn, Firle",,https://raminn.co.uk/,,BN8 6NU,50.846847,0.084832,False,True,ONSPD via Nominatim (Sussex bbox)
+138,The Crown at Turners Hill,,https://thecrownturnershill.co.uk/,,RH10 4PT,51.103405,-0.084943,False,True,ONSPD via Nominatim (Sussex bbox)
+139,"The Trevor Arms, Glynde",,https://www.thetrevor.co.uk/,,BN8 6RU,50.857798,0.069363,False,True,ONSPD via Nominatim (Sussex bbox)
+140,"The Talbot, Cuckfield",https://restaurantsbrighton.co.uk/talbot-cuckfield-pub/,https://restaurantsbrighton.co.uk/talbot-cuckfield-pub/,"The Talbot, High St, Cuckfield, West Sussex, RH17 5JX",RH17 5JX,51.006106,-0.142450,False,True,ONSPD via venue page postcode
+141,"The Crabtree, Horsham",,https://www.crabtreesussex.co.uk/,,RH13 6PU,51.014575,-0.260684,False,True,ONSPD via Nominatim (Sussex bbox)
+142,The Sportsman,https://restaurantsbrighton.co.uk/sportsman-pub-goddards-green/,https://restaurantsbrighton.co.uk/sportsman-pub-goddards-green/,"Cuckfield Road, Hassocks, West Sussex BN6 9LQ",BN6 9LQ,50.966806,-0.171932,False,True,ONSPD via venue page postcode
+143,Curio Cafe & Bar,https://restaurantsbrighton.co.uk/curio-cafe-bar/,https://restaurantsbrighton.co.uk/curio-cafe-bar/,"1 Clyde Rd, Brighton and Hove, Brighton BN1 4NN",BN1 4NN,50.834805,-0.137428,False,False,ONSPD via venue page postcode
+144,Komodo Coffee,,https://www.komodo.coffee/,,,,,False,False,
+145,44 Poets,,https://44poets.co.uk/,,BN3 5BF,50.833861,-0.178409,False,False,"ONSPD via Nominatim (Sussex bbox, retry)"
+146,Drury Cafe,,https://www.drurysouthern.co.uk/,,BN42 4FJ,50.834473,-0.236854,False,False,ONSPD via Nominatim (Sussex bbox)
+147,Julien Plumart,https://restaurantsbrighton.co.uk/julien-plumart-brighton-cafe/,https://restaurantsbrighton.co.uk/julien-plumart-brighton-cafe/,"48 Queens Rd, Brighton, BN1 3XB",BN1 3XB,50.826878,-0.142273,False,False,ONSPD via venue page postcode
+148,Little Bruce Coffee,,https://www.instagram.com/littlebrucecoffee/,,BN3 5SJ,50.835231,-0.204729,False,False,ONSPD via Nominatim (Sussex bbox)
+149,Nowhere Man,,https://www.instagram.com/goingnowhereman/?hl=en,,BN1 3FH,50.825342,-0.148384,False,False,ONSPD via Nominatim (Sussex bbox)
+150,17 grams,,https://17grams.co.uk/,,,,,False,False,
+151,MOGUMOGU,https://restaurantsbrighton.co.uk/mogumogu/,https://restaurantsbrighton.co.uk/mogumogu/,"81 London Road, Brighton, BN1 4JF",BN1 4JF,50.832592,-0.137360,False,False,ONSPD via venue page postcode
+152,Tom's Sandwich Shop,,https://www.instagram.com/tomssandwiches/,,,,,False,False,
+153,Earl's Sandwiches,,https://www.instagram.com/earlsbrighton/,,,,,False,False,
+154,Chilli,https://restaurantsbrighton.co.uk/chilli-brighton/,https://restaurantsbrighton.co.uk/chilli-brighton/,"6 Prince Albert Street, Brighton, BN1 1HE",BN1 1HE,50.821367,-0.141243,False,False,ONSPD via venue page postcode
+155,Nanima Asian Kitchen & Café,https://restaurantsbrighton.co.uk/nanima-brighton/,https://restaurantsbrighton.co.uk/nanima-brighton/,36 St. George's Road Brighton BN2 1ED,BN2 1ED,50.818723,-0.121586,False,False,ONSPD via venue page postcode
+156,Honest Burgers,https://restaurantsbrighton.co.uk/honest-burgers-brighton/,https://restaurantsbrighton.co.uk/honest-burgers-brighton/,22 – 23 York Place Brighton East Sussex BN1 4GU,BN1 4GU,50.828646,-0.135785,False,False,ONSPD via venue page postcode
+157,Fountain Head Pub & Boysterous Burgers,https://restaurantsbrighton.co.uk/boysterous-burgers/,https://restaurantsbrighton.co.uk/boysterous-burgers/,"101-102 North Road Brighton, BN1 1YE",BN1 1YE,50.825584,-0.137810,False,False,ONSPD via venue page postcode
+158,Lavash,https://restaurantsbrighton.co.uk/lavash-restaurant-brighton/,https://restaurantsbrighton.co.uk/lavash-restaurant-brighton/,"60 North Street, Brighton BN1 1RH",BN1 1RH,50.823190,-0.142534,False,False,ONSPD via venue page postcode
+159,The Wine Cellar Brighton,,https://thewinecellarbrighton.co.uk/,,BN1 1WN,50.824459,-0.137187,False,False,"ONSPD via Nominatim (Sussex bbox, retry)"
+160,Ten Green Bottles,https://restaurantsbrighton.co.uk/ten-green-bottles-brighton/,https://restaurantsbrighton.co.uk/ten-green-bottles-brighton/,"9 Jubilee St, Brighton BN1 1GE",BN1 1GE,50.824983,-0.138813,False,False,ONSPD via venue page postcode
+161,Bincho Yakitori,https://restaurantsbrighton.co.uk/bincho-yakitori/,https://restaurantsbrighton.co.uk/bincho-yakitori/,"63 Preston St, Brighton BN1 2HE",BN1 2HE,50.824016,-0.150580,False,False,ONSPD via venue page postcode
+162,Shaanxi Brighton,https://restaurantsbrighton.co.uk/shaanxi-brighton/,https://restaurantsbrighton.co.uk/shaanxi-brighton/,"48 Preston Street, Brighton, BN1 2HP",BN1 2HP,50.823933,-0.151023,False,False,ONSPD via venue page postcode
+163,Chilli Pickle,https://restaurantsbrighton.co.uk/chilli-pickle-brighton/,https://restaurantsbrighton.co.uk/chilli-pickle-brighton/,"6-8 Meeting House Lane, Brighton, BN1 1HB",BN1 1HB,50.822154,-0.140729,False,False,ONSPD via venue page postcode
+164,The Real Junk Food Project,https://restaurantsbrighton.co.uk/the-real-junk-food-project-brighton/,https://restaurantsbrighton.co.uk/the-real-junk-food-project-brighton/,"50 Gardner St, Brighton BN1 1UN",BN1 1UN,50.824925,-0.139355,False,False,ONSPD via venue page postcode
+165,Chilli Shaak,,https://chillishaak.com/,,,,,False,False,
+166,Pompoko,https://restaurantsbrighton.co.uk/pompoko-brighton/,https://restaurantsbrighton.co.uk/pompoko-brighton/,"110 Church Street, Brighton BN1 1UD",BN1 1UD,50.824082,-0.138380,False,False,ONSPD via venue page postcode
+167,Spanish Lady Pub & Kitchen,,https://www.spanishladypub.com/,,BN2 8LH,50.800607,-0.037276,False,False,"ONSPD via Nominatim (Sussex bbox, retry)"
+168,Tony's,,https://originaltonys.com/,,,,,False,False,
+169,Pizza 500,,https://www.instagram.com/pizza500ltd/,,BN1 4QG,50.835275,-0.141855,False,False,"ONSPD via Nominatim (Sussex bbox, retry)"
+170,Paris Wine Bar,https://restaurantsbrighton.co.uk/paris-wine-bar-hove/,https://restaurantsbrighton.co.uk/paris-wine-bar-hove/,"119 Church Road, Hove BN3 2AF",BN3 2AF,50.828020,-0.171665,True,False,ONSPD via venue page postcode
+171,Chuckaburger,,,,,,,False,False,
+172,Pizzaface,,https://www.instagram.com/pizzaface_ltd/,,BN2 1ED,50.818723,-0.121586,False,False,"ONSPD via Nominatim (Sussex bbox, retry)"
+173,Wild Flour Pizza,,https://www.wildflourpizza.co.uk/,,BN2 7BA,50.816194,-0.076543,False,False,"ONSPD via Nominatim (Sussex bbox, retry)"
+174,Thai Pad Thai,,https://www.thaipadthai.uk/,,BN1 3JD,50.830273,-0.147038,False,False,"ONSPD via Nominatim (Sussex bbox, retry)"
+175,Bayon Bakery,https://restaurantsbrighton.co.uk/bayon-bakery/,https://restaurantsbrighton.co.uk/bayon-bakery/,"11 Hove Park Villas, Brighton and Hove",BN3 6HP,50.835791,-0.170154,False,False,"ONSPD via Nominatim (Sussex bbox, retry)"
+176,Pommy's Pizza,,https://www.instagram.com/pommyspizza/?hl=en,,,,,False,False,
+177,Taco Look at Me Now,,https://www.instagram.com/tacolookatmenow/,,,,,False,False,
+178,Lost Boys Chicken,https://restaurantsbrighton.co.uk/lost-boys-chicken/,https://restaurantsbrighton.co.uk/lost-boys-chicken/,"The Joker Pub 2 Preston Road, Brighton, BN1 4QF",BN1 4QF,50.834517,-0.139996,False,False,ONSPD via venue page postcode
+179,PizzaMe (Pizza Me),,https://www.instagram.com/pizzame_brighton/,,BN2 3DD,50.831640,-0.126790,False,False,"ONSPD via Nominatim (Sussex bbox, retry)"
+180,Bee May Bakery,,https://www.beemaybaker.com/,,,,,False,False,
+181,Cloud 9,,https://cloud9brighton.co.uk/,,BN1 4AL,50.826267,-0.138904,False,False,"ONSPD via Nominatim (Sussex bbox, retry)"
+182,Open Bakery,https://restaurantsbrighton.co.uk/open-bakery-queens-park/,https://restaurantsbrighton.co.uk/open-bakery-queens-park/,"35 West Dr, Brighton and Hove, Brighton BN2 0GD",BN2 0GD,50.824740,-0.127535,False,False,ONSPD via venue page postcode
+183,Becky's Brownies,,https://www.beckysbrownies.co.uk/,,,,,False,False,
+184,Berkson Bakes,,https://berksonbakes.co.uk/,,,,,False,False,
+185,Boho Gelato,,https://www.bohogelato.co.uk/,,BN1 1AD,50.821691,-0.142167,False,False,"ONSPD via Nominatim (Sussex bbox, retry)"
+186,Real Patisserie,,,,,,,False,False,
+187,Sugardough,,https://sugardough.co.uk/,,BN3 2WB,50.825018,-0.175985,False,False,"ONSPD via Nominatim (Sussex bbox, retry)"
+188,Marrocco's,,https://www.marroccos.co.uk/,,,,,False,False,
+189,Jacobs Bakery + Cafe,https://restaurantsbrighton.co.uk/jacobs-bakery/,https://restaurantsbrighton.co.uk/jacobs-bakery/,"NORTH UNIT, ROX, Gloucester Place, Brighton, BN1 4UD, United Kingdom",BN1 4UD,50.826649,-0.135793,False,False,ONSPD via venue page postcode
+190,Honey Cake By Mary,https://restaurantsbrighton.co.uk/honey-cake-brighton/,https://restaurantsbrighton.co.uk/honey-cake-brighton/,"20 Richardson Rd, Brighton and Hove, Hove BN3 5RB",BN3 5RB,50.830979,-0.188007,False,False,ONSPD via venue page postcode
+191,Knoops,https://restaurantsbrighton.co.uk/knoops-brighton/,https://restaurantsbrighton.co.uk/knoops-brighton/,"42 Market Street, Brighton, BN1 1HH",BN1 1HH,50.821460,-0.139763,False,False,ONSPD via venue page postcode

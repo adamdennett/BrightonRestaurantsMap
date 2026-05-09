@@ -1,0 +1,24 @@
+# R
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj~
+
+# Quarto build artefacts (we keep docs/ — that's what Pages serves)
+.quarto/
+*_files/
+*_cache/
+
+# ONSPD bundle is huge (~230 MB) and user-local; keep out of git.
+ONSPD_FEB_2024_UK.zip
+onspd_csv/
+
+# Geocoded copies are derived from 01_geocode.R; keep ground-truth CSVs only.
+bravo_2026_venues_geocoded.csv
+bravo_2026_venues_geocoded.rds
+bravo_2026_winners_geocoded.csv
+bravo_2026_winners_geocoded.rds
+
+# Mac/Win
+.DS_Store
+Thumbs.db

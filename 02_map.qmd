@@ -1,0 +1,389 @@
+---
+title: "Brighton Restaurant Awards (BRAVO) 2026 — Interactive Map"
+author: "Adam Dennett"
+format:
+  html:
+    output-file: index.html
+    page-layout: full
+    toc: false
+    embed-resources: true
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r setup}
+library(readr)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(leaflet)
+library(htmlwidgets)
+library(htmltools)
+library(jsonlite)
+
+winners <- read_csv("bravo_2026_winners.csv", show_col_types = FALSE)
+venues  <- read_csv("bravo_2026_venues.csv",  show_col_types = FALSE) |>
+  mutate(lat = as.numeric(lat), lon = as.numeric(lon))
+
+first_nonempty <- function(x) {
+  x <- x[!is.na(x) & x != ""]
+  if (length(x) == 0) "" else x[[1]]
+}
+
+venues_for_map <- winners |>
+  filter(!is.na(lat), !is.na(lon)) |>
+  group_by(venue_idx) |>
+  summarise(
+    name        = first(name),
+    profile_url = first_nonempty(profile_url),
+    venue_url   = first_nonempty(venue_url),
+    address     = first_nonempty(address),
+    postcode    = first_nonempty(postcode),
+    lat         = first(lat),
+    lon         = first(lon),
+    rankings    = list(tibble(category = category, rank = rank)),
+    best_rank   = min(rank),
+    n_cats      = n(),
+    .groups     = "drop"
+  )
+
+# Jitter venues sharing exact lat/lon (~5.5 m circle)
+venues_for_map <- venues_for_map |>
+  mutate(.coord_key = paste0(round(lat, 5), "_", round(lon, 5))) |>
+  group_by(.coord_key) |>
+  mutate(
+    .n   = n(),
+    .ix  = row_number() - 1,
+    .ang = ifelse(.n > 1, 2 * pi * .ix / .n, 0),
+    .r   = ifelse(.n > 1, 0.00005, 0),
+    lat  = lat + .r * cos(.ang),
+    lon  = lon + .r * sin(.ang) / cos(lat * pi / 180)
+  ) |>
+  ungroup() |>
+  select(-.coord_key, -.n, -.ix, -.ang, -.r)
+
+categories <- sort(unique(winners$category))
+
+icon_base <- "https://img.restaurantsbrighton.co.uk"
+category_icons <- c(
+  "Best Brighton Restaurant"   = paste0(icon_base, "/wp-content/uploads/2019/11/best-restaurant.png"),
+  "Best Sussex Restaurant"     = paste0(icon_base, "/wp-content/uploads/2016/11/best-restaurant.jpg"),
+  "Best Brunch"                = paste0(icon_base, "/wp-content/uploads/2023/03/brunch-1.png"),
+  "Plant Champions"            = paste0(icon_base, "/wp-content/uploads/2019/11/plant-champions.png"),
+  "Best Cocktails"             = paste0(icon_base, "/wp-content/uploads/2023/03/cocktails.png"),
+  "Best Brighton Pub"          = paste0(icon_base, "/wp-content/uploads/2023/03/Best-local-1.png"),
+  "Family Friendly"            = paste0(icon_base, "/wp-content/uploads/2023/03/for-the-family-1.png"),
+  "Best Team"                  = paste0(icon_base, "/wp-content/uploads/2023/03/best-team-1.png"),
+  "Best Sussex Pub"            = paste0(icon_base, "/wp-content/uploads/2019/11/best-pub-grub.png"),
+  "Best Cafe"                  = paste0(icon_base, "/wp-content/uploads/2023/03/best-cafe-1.png"),
+  "Best Lunch"                 = paste0(icon_base, "/wp-content/uploads/2024/01/lunch-2.png"),
+  "Best Sunday Roast"          = paste0(icon_base, "/wp-content/uploads/2023/03/sunday-roast.png"),
+  "Best Wine List"             = paste0(icon_base, "/wp-content/uploads/2023/03/wine-list.png"),
+  "Best International Cuisine" = paste0(icon_base, "/wp-content/uploads/2023/03/international.png"),
+  "Sustainability Champions"   = paste0(icon_base, "/wp-content/uploads/2023/03/sustainable.png"),
+  "Best Value"                 = paste0(icon_base, "/wp-content/uploads/2023/03/Eat-well-for-less-1.png"),
+  "Best Takeaway"              = paste0(icon_base, "/wp-content/uploads/2024/01/takeaway-2.png"),
+  "Sweets and Treats"          = paste0(icon_base, "/wp-content/uploads/2026/03/sweet-treat-1-4.png")
+)
+```
+
+Voted by 71,285 locals in March 2026. **`r nrow(venues_for_map)`** geocoded venues across **`r length(categories)`** categories.
+
+Use the dropdowns to filter the map by category, rank range, or specific venue. When a category is selected, markers use that category's BRAVO icon on a brand-lime badge; "All categories" falls back to Spectral-coloured circles sized by best rank.
+
+```{r bravo-map}
+venue_data <- venues_for_map |>
+  rowwise() |>
+  mutate(
+    cats  = list(rankings$category),
+    ranks = list(rankings$rank)
+  ) |>
+  ungroup() |>
+  select(name, address, postcode, lat, lon, profile_url, venue_url,
+         best_rank, n_cats, cats, ranks)
+
+data_json  <- toJSON(venue_data, na = "null", auto_unbox = TRUE, dataframe = "rows")
+cats_json  <- toJSON(c("All categories", categories), auto_unbox = TRUE)
+icons_json <- toJSON(as.list(category_icons), auto_unbox = TRUE)
+
+m <- leaflet(width = "100%", height = 700) |>
+  addProviderTiles(providers$CartoDB.Positron) |>
+  setView(lng = -0.139, lat = 50.825, zoom = 13)
+
+data_tag <- htmltools::tags$script(
+  type = "application/json",
+  id   = "bravo-venue-data",
+  htmltools::HTML(as.character(data_json))
+)
+
+font_tag <- htmltools::tagList(
+  htmltools::tags$link(rel = "preconnect", href = "https://fonts.googleapis.com"),
+  htmltools::tags$link(rel = "preconnect", href = "https://fonts.gstatic.com", crossorigin = ""),
+  htmltools::tags$link(rel = "stylesheet",
+    href = "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Questrial&display=swap")
+)
+
+style_tag <- htmltools::tags$style(htmltools::HTML('
+  body, .quarto-container, p { font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #000; }
+  h1, h2, h3, h4, h5, h6, .title { font-family: Questrial, "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 600; letter-spacing: 0.01em; }
+  .bravo-controls { font-family: "Open Sans", sans-serif; font-size: 13px; }
+  .bravo-controls label { font-family: Questrial, sans-serif; font-weight: 600; font-size: 12px; color: #333; text-transform: uppercase; letter-spacing: 0.05em; }
+  .bravo-controls select { font-family: "Open Sans", sans-serif; font-size: 13px; padding: 6px 9px; border: 1px solid #cfcfcf; border-radius: 4px; background: #fff; transition: border-color .15s; }
+  .bravo-controls select:focus { outline: none; border-color: #c1d42f; box-shadow: 0 0 0 2px rgba(193,212,47,.35); }
+  .bravo-controls .info-count { color: #666; font-size: 12px; }
+  .leaflet-popup-content { font-family: "Open Sans", sans-serif; font-size: 13px; line-height: 1.45; }
+  .leaflet-popup-content .venue-name { font-family: Questrial, sans-serif; font-weight: 600; font-size: 15px; color: #1f1f1f; display: block; }
+  .leaflet-popup-content a { color: #5a6e0a; text-decoration: underline; }
+  .leaflet-tooltip { font-family: "Open Sans", sans-serif; font-size: 12px; }
+  .info.legend { font-family: "Open Sans", sans-serif; }
+  .info.legend strong { font-family: Questrial, sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; font-size: 12px; color: #333; }
+'))
+
+js_code <- paste0('
+function(el, x) {
+  var map = this;
+  var venues = JSON.parse(document.getElementById("bravo-venue-data").textContent);
+  venues.forEach(function(v){
+    if (!Array.isArray(v.cats))  v.cats  = [v.cats];
+    if (!Array.isArray(v.ranks)) v.ranks = [v.ranks];
+  });
+  var cats   = ', cats_json,  ';
+  var ICONS  = ', icons_json, ';
+
+  var markers = L.layerGroup().addTo(map);
+
+  // Spectral palette (used for circle markers under "All categories")
+  var SPECTRAL = [
+    [158,1,66], [213,62,79], [244,109,67], [253,174,97], [254,224,139],
+    [255,255,191], [230,245,152], [171,221,164], [102,194,165], [50,136,189], [94,79,162]
+  ];
+  function lerp(a,b,t){return Math.round(a + (b-a)*t);}
+  function colorForRank(rank) {
+    var t = Math.max(0, Math.min(1, (rank - 1) / 19));
+    var s = t * (SPECTRAL.length - 1);
+    var i = Math.min(Math.floor(s), SPECTRAL.length - 2);
+    var f = s - i;
+    var c0 = SPECTRAL[i], c1 = SPECTRAL[i+1];
+    return "rgb(" + lerp(c0[0],c1[0],f) + "," + lerp(c0[1],c1[1],f) + "," + lerp(c0[2],c1[2],f) + ")";
+  }
+  function radiusFor(rank) {
+    return 6 + (21 - Math.min(rank, 20)) * 0.5;
+  }
+  function iconSizeFor(rank) {
+    return Math.round(28 + (21 - Math.min(rank, 20)) * 1.6);
+  }
+
+  // Cache leaflet divIcon objects keyed by (category|size).
+  // Brand-lime circular badge with the category icon on top.
+  var BRAND_GREEN = "#c1d42f";
+  var iconCache = {};
+  function getIcon(category, rank) {
+    var size = iconSizeFor(rank);
+    var key  = category + "|" + size;
+    if (iconCache[key]) return iconCache[key];
+    var url = ICONS[category];
+    if (!url) return null;
+    var pad = Math.max(4, Math.round(size * 0.18));
+    var inner = size - pad * 2;
+    var html =
+      "<div style=\\"width:" + size + "px;height:" + size + "px;border-radius:50%;" +
+      "background:" + BRAND_GREEN + ";border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35);" +
+      "display:flex;align-items:center;justify-content:center;\\">" +
+        "<img src=\\"" + url + "\\" style=\\"width:" + inner + "px;height:" + inner + "px;\\">" +
+      "</div>";
+    iconCache[key] = L.divIcon({
+      html: html, className: "bravo-cat-icon",
+      iconSize: [size, size], iconAnchor: [size/2, size/2], popupAnchor: [0, -size/2 + 2]
+    });
+    return iconCache[key];
+  }
+
+  // ---- Legend ----
+  var leg = L.control({position: "bottomright"});
+  leg.onAdd = function() {
+    var div = L.DomUtil.create("div", "info legend");
+    div.style.cssText = "background:white;padding:10px 12px;border-radius:5px;box-shadow:0 1px 5px rgba(0,0,0,.25);font-size:12px;line-height:1.4;min-width:200px;";
+    return div;
+  };
+  leg.addTo(map);
+
+  function refreshLegend(mode, category) {
+    var node = leg.getContainer();
+    if (!node) return;
+    if (mode === "icon" && category && ICONS[category]) {
+      node.innerHTML =
+        "<strong>" + category + "</strong>" +
+        "<div style=\\"margin-top:8px;display:flex;align-items:center;gap:10px;\\">" +
+          "<div style=\\"width:36px;height:36px;border-radius:50%;background:" + BRAND_GREEN + ";" +
+            "border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35);" +
+            "display:flex;align-items:center;justify-content:center;\\">" +
+            "<img src=\\"" + ICONS[category] + "\\" style=\\"width:24px;height:24px;\\">" +
+          "</div>" +
+          "<span style=\\"font-size:11px;color:#555;\\">Badge size scales with rank</span>" +
+        "</div>";
+    } else {
+      var stops = SPECTRAL.map(function(c, i){
+        return "rgb(" + c[0] + "," + c[1] + "," + c[2] + ") " + (100 * i / (SPECTRAL.length - 1)).toFixed(1) + "%";
+      }).join(", ");
+      node.innerHTML =
+        "<strong>Best rank in selection</strong>" +
+        "<div style=\\"height:12px;border-radius:3px;margin:8px 0 4px;background:linear-gradient(to right," + stops + ");\\"></div>" +
+        "<div style=\\"display:flex;justify-content:space-between;color:#555;font-size:11px;\\">" +
+          "<span>1 (best)</span><span>10</span><span>20</span>" +
+        "</div>" +
+        "<div style=\\"margin-top:6px;color:#666;font-size:11px;\\">Circle size also scales with rank.</div>";
+    }
+  }
+
+  // ---- Controls UI ----
+  var venueNames = venues.map(function(v){return v.name;}).sort(function(a,b){
+    return a.toLowerCase().localeCompare(b.toLowerCase());
+  });
+
+  var bar = document.createElement("div");
+  bar.className = "bravo-controls";
+  bar.style.cssText = "display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;margin-bottom:12px;";
+
+  function controlBox(labelText) {
+    var wrap = document.createElement("div");
+    wrap.style.cssText = "display:flex;flex-direction:column;gap:4px;";
+    var lbl = document.createElement("label");
+    lbl.textContent = labelText;
+    wrap.appendChild(lbl);
+    return wrap;
+  }
+
+  var catWrap = controlBox("Category");
+  var selCat = document.createElement("select");
+  selCat.style.minWidth = "240px";
+  cats.forEach(function(c){var o=document.createElement("option");o.value=c;o.textContent=c;selCat.appendChild(o);});
+  catWrap.appendChild(selCat);
+  bar.appendChild(catWrap);
+
+  var rkWrap = controlBox("Rank range");
+  var selRank = document.createElement("select");
+  selRank.style.minWidth = "200px";
+  [["Ignore rank (show every entry)","ignore"],
+   ["Top 1 only","1"],["Top 3","3"],["Top 5","5"],["Top 10","10"],["Top 20 (all)","20"]]
+    .forEach(function(r){var o=document.createElement("option");o.value=r[1];o.textContent=r[0];selRank.appendChild(o);});
+  selRank.value = "ignore";
+  rkWrap.appendChild(selRank);
+  bar.appendChild(rkWrap);
+
+  var vnWrap = controlBox("Zoom to venue");
+  var selVenue = document.createElement("select");
+  selVenue.style.minWidth = "240px";
+  var oAll = document.createElement("option");
+  oAll.value=""; oAll.textContent="— all visible venues —";
+  selVenue.appendChild(oAll);
+  venueNames.forEach(function(n){var o=document.createElement("option");o.value=n;o.textContent=n;selVenue.appendChild(o);});
+  vnWrap.appendChild(selVenue);
+  bar.appendChild(vnWrap);
+
+  var info = document.createElement("div");
+  info.className = "info-count";
+  info.style.marginLeft = "auto";
+  bar.appendChild(info);
+
+  el.parentNode.insertBefore(bar, el);
+
+  // ---- Drawing ----
+  function popupHTML(d) {
+    var rows = d.cats.map(function(c, i){
+      return "<div>" + c + " <strong>#" + d.ranks[i] + "</strong></div>";
+    }).join("");
+    var addr = d.address || d.postcode || "";
+    var link = "";
+    if (d.profile_url) link = "<a href=\\"" + d.profile_url + "\\" target=\\"_blank\\">Restaurants Brighton page</a>";
+    else if (d.venue_url) link = "<a href=\\"" + d.venue_url + "\\" target=\\"_blank\\">Venue website</a>";
+    return "<div style=\\"min-width:240px;\\">" +
+      "<span class=\\"venue-name\\">" + d.name + "</span>" +
+      "<span style=\\"color:#888;font-size:12px;\\">" + addr + "</span>" +
+      "<div style=\\"margin-top:6px;font-size:13px;\\">" + rows + "</div>" +
+      (link ? "<div style=\\"margin-top:6px;font-size:12px;\\">" + link + "</div>" : "") +
+      "</div>";
+  }
+
+  function venueMatches(d, cat, rkMode, name) {
+    var bestInCat = null;
+    if (cat === "All categories") {
+      bestInCat = d.best_rank;
+    } else {
+      for (var i = 0; i < d.cats.length; i++) {
+        if (d.cats[i] === cat) {
+          if (bestInCat === null || d.ranks[i] < bestInCat) bestInCat = d.ranks[i];
+        }
+      }
+      if (bestInCat === null) return null;
+    }
+    if (rkMode !== "ignore") {
+      var maxRank = parseInt(rkMode, 10);
+      if (bestInCat > maxRank) return null;
+    }
+    if (name && d.name !== name) return null;
+    return bestInCat;
+  }
+
+  function redraw() {
+    markers.clearLayers();
+    var cat    = selCat.value;
+    var rkMode = selRank.value;
+    var name   = selVenue.value;
+    var useIcon = (cat !== "All categories" && ICONS[cat]);
+    var n = 0;
+    var bounds = [];
+    venues.forEach(function(d){
+      var rank;
+      try { rank = venueMatches(d, cat, rkMode, name); }
+      catch(e) { return; }
+      if (rank == null) return;
+      try {
+        var marker;
+        if (useIcon) {
+          marker = L.marker([d.lat, d.lon], { icon: getIcon(cat, rank) });
+        } else {
+          marker = L.circleMarker([d.lat, d.lon], {
+            radius: radiusFor(rank),
+            fillColor: colorForRank(rank),
+            fillOpacity: 0.9,
+            color: "#222",
+            weight: 0.8
+          });
+        }
+        marker
+          .bindPopup(function(){ try { return popupHTML(d); } catch(e){ return d.name; } })
+          .bindTooltip(d.name, {direction:"top"})
+          .addTo(markers);
+        bounds.push([d.lat, d.lon]);
+        n++;
+      } catch(e) {}
+    });
+    info.innerHTML = "<strong>" + n + "</strong> venue" + (n===1?"":"s") + " shown";
+    refreshLegend(useIcon ? "icon" : "spectral", cat);
+
+    if (name && bounds.length === 1) {
+      map.flyTo(bounds[0], 16, {duration: 0.6});
+    } else if (bounds.length > 1 && cat !== "All categories") {
+      map.flyToBounds(bounds, {padding: [40,40], duration: 0.6, maxZoom: 14});
+    }
+  }
+
+  selCat.addEventListener("change", redraw);
+  selRank.addEventListener("change", redraw);
+  selVenue.addEventListener("change", redraw);
+  redraw();
+}
+')
+
+m <- m |> onRender(js_code)
+
+htmltools::browsable(htmltools::tagList(font_tag, style_tag, data_tag, m))
+```
+
+::: {.callout-note}
+**Geocoding status.** `r sum(!is.na(venues$lat))` of `r nrow(venues)` venues plotted (post-dedupe). Missing venues are mostly delivery-only takeaways and bakeries not listed in OpenStreetMap; add postcodes manually in `bravo_2026_venues.csv` and re-run `01_geocode.R` to fill them.
+
+Source: <https://restaurantsbrighton.co.uk/> · BRAVO 2026 awards · 71,285 votes · 18 categories.
+:::

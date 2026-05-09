@@ -1,0 +1,19 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - 02_map.qmd
+
+website:
+  title: "Brighton Restaurant Awards 2026"
+  description: "Interactive map of every BRAVO 2026 winner across all 18 categories."
+  navbar: false
+  page-footer:
+    center: "Data scraped from restaurantsbrighton.co.uk · Built with Quarto + Leaflet"
+
+format:
+  html:
+    page-layout: full
+    embed-resources: true
+    theme: cosmo
+    toc: false
