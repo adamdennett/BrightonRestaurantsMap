@@ -147,23 +147,108 @@ font_tag <- htmltools::tagList(
   htmltools::tags$link(rel = "preconnect", href = "https://fonts.googleapis.com"),
   htmltools::tags$link(rel = "preconnect", href = "https://fonts.gstatic.com", crossorigin = ""),
   htmltools::tags$link(rel = "stylesheet",
-    href = "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Questrial&display=swap")
+    href = "https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Questrial&display=swap")
 )
 
+# Brand palette pulled from restaurantsbrighton.co.uk:
+#   #4b2c4e — deep aubergine (primary brand)
+#   #2e0d37 — darker plum (hover / strong text)
+#   #62bed5 — accent cyan
+#   #ca2bc6 — accent magenta (sparingly)
 style_tag <- htmltools::tags$style(htmltools::HTML('
-  body, .quarto-container, p { font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: #000; }
-  h1, h2, h3, h4, h5, h6, .title { font-family: Questrial, "Helvetica Neue", Helvetica, Arial, sans-serif; font-weight: 600; letter-spacing: 0.01em; }
-  .bravo-controls { font-family: "Open Sans", sans-serif; font-size: 13px; }
-  .bravo-controls label { font-family: Questrial, sans-serif; font-weight: 600; font-size: 12px; color: #333; text-transform: uppercase; letter-spacing: 0.05em; }
-  .bravo-controls select { font-family: "Open Sans", sans-serif; font-size: 13px; padding: 6px 9px; border: 1px solid #cfcfcf; border-radius: 4px; background: #fff; transition: border-color .15s; }
-  .bravo-controls select:focus { outline: none; border-color: #c1d42f; box-shadow: 0 0 0 2px rgba(193,212,47,.35); }
-  .bravo-controls .info-count { color: #666; font-size: 12px; }
-  .leaflet-popup-content { font-family: "Open Sans", sans-serif; font-size: 13px; line-height: 1.45; }
-  .leaflet-popup-content .venue-name { font-family: Questrial, sans-serif; font-weight: 600; font-size: 15px; color: #1f1f1f; display: block; }
-  .leaflet-popup-content a { color: #5a6e0a; text-decoration: underline; }
-  .leaflet-tooltip { font-family: "Open Sans", sans-serif; font-size: 12px; }
-  .info.legend { font-family: "Open Sans", sans-serif; }
-  .info.legend strong { font-family: Questrial, sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; font-size: 12px; color: #333; }
+  body, .quarto-container, p {
+    font-family: Outfit, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #2a2a2a;
+    background: #fafafa;
+  }
+  a { color: #4b2c4e; }
+  a:hover { color: #2e0d37; }
+  h1, h2, h3, h4, h5, h6, .title {
+    font-family: Questrial, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: #4b2c4e;
+  }
+  h1.title, .quarto-title h1 {
+    font-size: 2.4rem;
+    line-height: 1.15;
+    border-bottom: 4px solid #4b2c4e;
+    padding-bottom: 0.4rem;
+    margin-bottom: 0.6rem;
+  }
+  .quarto-title-meta, .quarto-title-author-name { color: #4b2c4e; font-family: Questrial, sans-serif; }
+  .quarto-title-meta-heading { color: #888; }
+  strong { color: #2e0d37; }
+
+  .bravo-controls {
+    font-family: Outfit, sans-serif;
+    font-size: 13.5px;
+    background: #fff;
+    border: 1px solid #ececec;
+    border-radius: 8px;
+    padding: 14px 16px;
+    box-shadow: 0 1px 3px rgba(75,44,78,.06);
+  }
+  .bravo-controls label {
+    font-family: Questrial, sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    color: #4b2c4e;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .bravo-controls select {
+    font-family: Outfit, sans-serif;
+    font-size: 13.5px;
+    color: #2a2a2a;
+    padding: 7px 10px;
+    border: 1px solid #d8d3da;
+    border-radius: 4px;
+    background: #fff;
+    transition: border-color .15s, box-shadow .15s;
+  }
+  .bravo-controls select:hover { border-color: #4b2c4e; }
+  .bravo-controls select:focus {
+    outline: none;
+    border-color: #4b2c4e;
+    box-shadow: 0 0 0 3px rgba(75,44,78,.18);
+  }
+  .bravo-controls .info-count { color: #4b2c4e; font-size: 13px; font-family: Questrial, sans-serif; }
+  .bravo-controls .info-count strong { color: #2e0d37; font-size: 16px; }
+
+  .leaflet-popup-content { font-family: Outfit, sans-serif; font-size: 13px; line-height: 1.45; }
+  .leaflet-popup-content .venue-name {
+    font-family: Questrial, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #4b2c4e;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .leaflet-popup-content a { color: #4b2c4e; text-decoration: underline; text-decoration-color: rgba(75,44,78,.4); }
+  .leaflet-popup-content a:hover { color: #2e0d37; text-decoration-color: #2e0d37; }
+  .leaflet-popup-content-wrapper { border-radius: 8px; box-shadow: 0 4px 16px rgba(75,44,78,.18); }
+  .leaflet-popup-tip { box-shadow: none; }
+  .leaflet-tooltip { font-family: Outfit, sans-serif; font-size: 12px; border-radius: 4px; }
+
+  .info.legend {
+    font-family: Outfit, sans-serif;
+    border-top: 3px solid #4b2c4e;
+  }
+  .info.legend strong {
+    font-family: Questrial, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 12px;
+    color: #4b2c4e;
+  }
+
+  .callout-note {
+    border-left-color: #4b2c4e !important;
+    background: #fff;
+  }
+  .callout-note .callout-title-container { color: #4b2c4e; font-family: Questrial, sans-serif; }
 '))
 
 js_code <- paste0('
@@ -203,9 +288,9 @@ function(el, x) {
 
   // Cache leaflet divIcon objects keyed by (category|size).
   // Per-category coloured circular badge with the icon rendered white on top.
-  var BRAND_GREEN = "#c1d42f";
+  var BRAND_AUBERGINE = "#4b2c4e";
   function colourFor(category) {
-    return COLOURS[category] || BRAND_GREEN;
+    return COLOURS[category] || BRAND_AUBERGINE;
   }
   var iconCache = {};
   function getIcon(category, rank) {
@@ -214,17 +299,17 @@ function(el, x) {
     if (iconCache[key]) return iconCache[key];
     var url = ICONS[category];
     if (!url) return null;
-    var pad = Math.max(4, Math.round(size * 0.18));
-    var inner = size - pad * 2;
     var bg = colourFor(category);
-    // brightness(0) invert(1) collapses the line-art icon to solid white,
-    // so it reads cleanly on every badge colour.
+    // Solid category-colour disc with the icon on top. The icon PNGs have
+    // transparent backgrounds, so the colour shows through around the
+    // grey + lime line-art and the badge looks like a single tinted disc.
+    var pad = Math.max(3, Math.round(size * 0.12));
+    var inner = size - pad * 2;
     var html =
       "<div style=\\"width:" + size + "px;height:" + size + "px;border-radius:50%;" +
       "background:" + bg + ";border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35);" +
       "display:flex;align-items:center;justify-content:center;\\">" +
-        "<img src=\\"" + url + "\\" style=\\"width:" + inner + "px;height:" + inner + "px;" +
-        "filter:brightness(0) invert(1);\\">" +
+        "<img src=\\"" + url + "\\" style=\\"width:" + inner + "px;height:" + inner + "px;\\">" +
       "</div>";
     iconCache[key] = L.divIcon({
       html: html, className: "bravo-cat-icon",
@@ -243,13 +328,12 @@ function(el, x) {
   leg.addTo(map);
 
   function badgeHTML(category, px) {
-    var inner = Math.round(px * 0.62);
+    var inner = Math.round(px * 0.78);
     return "<div style=\\"width:" + px + "px;height:" + px + "px;border-radius:50%;" +
-      "background:" + colourFor(category) + ";border:2px solid #fff;" +
-      "box-shadow:0 1px 4px rgba(0,0,0,.35);display:flex;align-items:center;" +
+      "background:" + colourFor(category) + ";border:1.5px solid #fff;" +
+      "box-shadow:0 1px 3px rgba(0,0,0,.25);display:flex;align-items:center;" +
       "justify-content:center;flex:0 0 auto;\\">" +
-        "<img src=\\"" + ICONS[category] + "\\" style=\\"width:" + inner + "px;height:" +
-        inner + "px;filter:brightness(0) invert(1);\\">" +
+        "<img src=\\"" + ICONS[category] + "\\" style=\\"width:" + inner + "px;height:" + inner + "px;\\">" +
       "</div>";
   }
 
