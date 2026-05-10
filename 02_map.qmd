@@ -87,11 +87,35 @@ category_icons <- c(
   "Best Takeaway"              = paste0(icon_base, "/wp-content/uploads/2024/01/takeaway-2.png"),
   "Sweets and Treats"          = paste0(icon_base, "/wp-content/uploads/2026/03/sweet-treat-1-4.png")
 )
+
+# Per-category badge colour. Each picks a hue that evokes the category
+# (wine = burgundy, plant = green, sweets = pink, ...). Used as the
+# circular badge background; the icon is rendered white on top.
+category_colours <- c(
+  "Best Brighton Restaurant"   = "#E63946",  # signature red
+  "Best Sussex Restaurant"     = "#8E1B2C",  # deep claret
+  "Best Brunch"                = "#F4A261",  # peach
+  "Plant Champions"            = "#2A9D8F",  # leafy teal
+  "Best Cocktails"             = "#D63384",  # cocktail pink
+  "Best Brighton Pub"          = "#E1A100",  # beer amber
+  "Family Friendly"            = "#4DA3FF",  # sky blue
+  "Best Team"                  = "#6F42C1",  # team purple
+  "Best Sussex Pub"            = "#B7791F",  # dark amber
+  "Best Cafe"                  = "#8B5A2B",  # coffee brown
+  "Best Lunch"                 = "#FF7043",  # warm orange
+  "Best Sunday Roast"          = "#A0522D",  # roast sienna
+  "Best Wine List"             = "#722F37",  # wine burgundy
+  "Best International Cuisine" = "#FFB627",  # saffron
+  "Sustainability Champions"   = "#588157",  # eco green
+  "Best Value"                 = "#F2C200",  # gold
+  "Best Takeaway"              = "#C97B3D",  # kraft brown
+  "Sweets and Treats"          = "#FF8FAB"   # candy pink
+)
 ```
 
 Voted by 71,285 locals in March 2026. **`r nrow(venues_for_map)`** geocoded venues across **`r length(categories)`** categories.
 
-Use the dropdowns to filter the map by category, rank range, or specific venue. When a category is selected, markers use that category's BRAVO icon on a brand-lime badge; "All categories" falls back to Spectral-coloured circles sized by best rank.
+Use the dropdowns to filter the map by category, rank range, or specific venue. Each category has its own badge colour (wine = burgundy, plant = leafy green, sweets = candy pink, and so on) — in "All categories" view, each venue takes the icon and colour of the category it ranks highest in. Badge size scales with rank.
 
 ```{r bravo-map}
 venue_data <- venues_for_map |>
@@ -104,9 +128,10 @@ venue_data <- venues_for_map |>
   select(name, address, postcode, lat, lon, profile_url, venue_url,
          best_rank, n_cats, cats, ranks)
 
-data_json  <- toJSON(venue_data, na = "null", auto_unbox = TRUE, dataframe = "rows")
-cats_json  <- toJSON(c("All categories", categories), auto_unbox = TRUE)
-icons_json <- toJSON(as.list(category_icons), auto_unbox = TRUE)
+data_json    <- toJSON(venue_data, na = "null", auto_unbox = TRUE, dataframe = "rows")
+cats_json    <- toJSON(c("All categories", categories), auto_unbox = TRUE)
+icons_json   <- toJSON(as.list(category_icons), auto_unbox = TRUE)
+colours_json <- toJSON(as.list(category_colours), auto_unbox = TRUE)
 
 m <- leaflet(width = "100%", height = 700) |>
   addProviderTiles(providers$CartoDB.Positron) |>
@@ -149,8 +174,9 @@ function(el, x) {
     if (!Array.isArray(v.cats))  v.cats  = [v.cats];
     if (!Array.isArray(v.ranks)) v.ranks = [v.ranks];
   });
-  var cats   = ', cats_json,  ';
-  var ICONS  = ', icons_json, ';
+  var cats    = ', cats_json,    ';
+  var ICONS   = ', icons_json,   ';
+  var COLOURS = ', colours_json, ';
 
   var markers = L.layerGroup().addTo(map);
 
@@ -176,8 +202,11 @@ function(el, x) {
   }
 
   // Cache leaflet divIcon objects keyed by (category|size).
-  // Brand-lime circular badge with the category icon on top.
+  // Per-category coloured circular badge with the icon rendered white on top.
   var BRAND_GREEN = "#c1d42f";
+  function colourFor(category) {
+    return COLOURS[category] || BRAND_GREEN;
+  }
   var iconCache = {};
   function getIcon(category, rank) {
     var size = iconSizeFor(rank);
@@ -187,11 +216,15 @@ function(el, x) {
     if (!url) return null;
     var pad = Math.max(4, Math.round(size * 0.18));
     var inner = size - pad * 2;
+    var bg = colourFor(category);
+    // brightness(0) invert(1) collapses the line-art icon to solid white,
+    // so it reads cleanly on every badge colour.
     var html =
       "<div style=\\"width:" + size + "px;height:" + size + "px;border-radius:50%;" +
-      "background:" + BRAND_GREEN + ";border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35);" +
+      "background:" + bg + ";border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35);" +
       "display:flex;align-items:center;justify-content:center;\\">" +
-        "<img src=\\"" + url + "\\" style=\\"width:" + inner + "px;height:" + inner + "px;\\">" +
+        "<img src=\\"" + url + "\\" style=\\"width:" + inner + "px;height:" + inner + "px;" +
+        "filter:brightness(0) invert(1);\\">" +
       "</div>";
     iconCache[key] = L.divIcon({
       html: html, className: "bravo-cat-icon",
@@ -209,6 +242,17 @@ function(el, x) {
   };
   leg.addTo(map);
 
+  function badgeHTML(category, px) {
+    var inner = Math.round(px * 0.62);
+    return "<div style=\\"width:" + px + "px;height:" + px + "px;border-radius:50%;" +
+      "background:" + colourFor(category) + ";border:2px solid #fff;" +
+      "box-shadow:0 1px 4px rgba(0,0,0,.35);display:flex;align-items:center;" +
+      "justify-content:center;flex:0 0 auto;\\">" +
+        "<img src=\\"" + ICONS[category] + "\\" style=\\"width:" + inner + "px;height:" +
+        inner + "px;filter:brightness(0) invert(1);\\">" +
+      "</div>";
+  }
+
   function refreshLegend(mode, category) {
     var node = leg.getContainer();
     if (!node) return;
@@ -216,30 +260,29 @@ function(el, x) {
       node.innerHTML =
         "<strong>" + category + "</strong>" +
         "<div style=\\"margin-top:8px;display:flex;align-items:center;gap:10px;\\">" +
-          "<div style=\\"width:36px;height:36px;border-radius:50%;background:" + BRAND_GREEN + ";" +
-            "border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35);" +
-            "display:flex;align-items:center;justify-content:center;\\">" +
-            "<img src=\\"" + ICONS[category] + "\\" style=\\"width:24px;height:24px;\\">" +
-          "</div>" +
+          badgeHTML(category, 36) +
           "<span style=\\"font-size:11px;color:#555;\\">Badge size scales with rank</span>" +
         "</div>";
     } else {
-      // "All categories" mode — show a small mini-legend explaining that each
-      // venue is drawn with the icon of its top-ranked category.
-      var sample = "<div style=\\"width:32px;height:32px;border-radius:50%;background:" + BRAND_GREEN + ";" +
-        "border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35);" +
-        "display:flex;align-items:center;justify-content:center;flex:0 0 auto;\\">" +
-        "<img src=\\"" + ICONS["Best Brighton Restaurant"] + "\\" style=\\"width:22px;height:22px;\\">" +
-        "</div>";
+      // "All categories" mode — colour swatch grid keying each badge colour
+      // to its category, since each venue is drawn with the icon/colour of
+      // the category it ranks highest in.
+      var rows = "";
+      for (var i = 1; i < cats.length; i++) {
+        var c = cats[i];
+        rows +=
+          "<div style=\\"display:flex;align-items:center;gap:6px;font-size:11px;color:#333;\\">" +
+            badgeHTML(c, 18) +
+            "<span>" + c + "</span>" +
+          "</div>";
+      }
       node.innerHTML =
         "<strong>All categories</strong>" +
-        "<div style=\\"margin-top:8px;display:flex;align-items:center;gap:10px;\\">" +
-          sample +
-          "<span style=\\"font-size:11px;color:#555;line-height:1.35;\\">" +
-            "Each venue is drawn with the icon of the category it ranks <em>highest</em> in. " +
-            "Badge size also scales with rank." +
-          "</span>" +
-        "</div>";
+        "<div style=\\"margin-top:6px;font-size:11px;color:#666;line-height:1.35;\\">" +
+          "Each venue uses the icon &amp; colour of the category it ranks <em>highest</em> in." +
+        "</div>" +
+        "<div style=\\"margin-top:8px;display:grid;grid-template-columns:1fr 1fr;" +
+        "gap:5px 12px;max-width:360px;\\">" + rows + "</div>";
     }
   }
 
