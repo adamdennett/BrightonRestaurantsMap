@@ -1,0 +1,9 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Brighton Restaurant Awards (BRAVO) 2026 — Interactive Map",
+    "section": "",
+    "text": "Voted by 71,285 locals in March 2026. 172 geocoded venues across 18 categories.\nUse the dropdowns to filter the map by category, rank range, or specific venue. When a category is selected, markers use that category’s BRAVO icon on a brand-lime badge; “All categories” falls back to Spectral-coloured circles sized by best rank.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nGeocoding status. 172 of 192 venues plotted (post-dedupe). Missing venues are mostly delivery-only takeaways and bakeries not listed in OpenStreetMap; add postcodes manually in bravo_2026_venues.csv and re-run 01_geocode.R to fill them.\nSource: https://restaurantsbrighton.co.uk/ · BRAVO 2026 awards · 71,285 votes · 18 categories."
+  }
+]

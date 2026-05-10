@@ -224,16 +224,22 @@ function(el, x) {
           "<span style=\\"font-size:11px;color:#555;\\">Badge size scales with rank</span>" +
         "</div>";
     } else {
-      var stops = SPECTRAL.map(function(c, i){
-        return "rgb(" + c[0] + "," + c[1] + "," + c[2] + ") " + (100 * i / (SPECTRAL.length - 1)).toFixed(1) + "%";
-      }).join(", ");
+      // "All categories" mode — show a small mini-legend explaining that each
+      // venue is drawn with the icon of its top-ranked category.
+      var sample = "<div style=\\"width:32px;height:32px;border-radius:50%;background:" + BRAND_GREEN + ";" +
+        "border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35);" +
+        "display:flex;align-items:center;justify-content:center;flex:0 0 auto;\\">" +
+        "<img src=\\"" + ICONS["Best Brighton Restaurant"] + "\\" style=\\"width:22px;height:22px;\\">" +
+        "</div>";
       node.innerHTML =
-        "<strong>Best rank in selection</strong>" +
-        "<div style=\\"height:12px;border-radius:3px;margin:8px 0 4px;background:linear-gradient(to right," + stops + ");\\"></div>" +
-        "<div style=\\"display:flex;justify-content:space-between;color:#555;font-size:11px;\\">" +
-          "<span>1 (best)</span><span>10</span><span>20</span>" +
-        "</div>" +
-        "<div style=\\"margin-top:6px;color:#666;font-size:11px;\\">Circle size also scales with rank.</div>";
+        "<strong>All categories</strong>" +
+        "<div style=\\"margin-top:8px;display:flex;align-items:center;gap:10px;\\">" +
+          sample +
+          "<span style=\\"font-size:11px;color:#555;line-height:1.35;\\">" +
+            "Each venue is drawn with the icon of the category it ranks <em>highest</em> in. " +
+            "Badge size also scales with rank." +
+          "</span>" +
+        "</div>";
     }
   }
 
@@ -326,12 +332,21 @@ function(el, x) {
     return bestInCat;
   }
 
+  // For "All categories" view, pick the category where this venue ranks
+  // highest (lowest rank number). Tie-break is the order categories appear.
+  function topCategoryFor(d) {
+    var bestI = 0;
+    for (var i = 1; i < d.ranks.length; i++) {
+      if (d.ranks[i] < d.ranks[bestI]) bestI = i;
+    }
+    return d.cats[bestI];
+  }
+
   function redraw() {
     markers.clearLayers();
     var cat    = selCat.value;
     var rkMode = selRank.value;
     var name   = selVenue.value;
-    var useIcon = (cat !== "All categories" && ICONS[cat]);
     var n = 0;
     var bounds = [];
     venues.forEach(function(d){
@@ -339,11 +354,15 @@ function(el, x) {
       try { rank = venueMatches(d, cat, rkMode, name); }
       catch(e) { return; }
       if (rank == null) return;
+      // Choose which icon to render: if the user has picked a specific
+      // category, use that one; otherwise use the top-ranked category for this venue.
+      var iconCat = (cat === "All categories") ? topCategoryFor(d) : cat;
       try {
         var marker;
-        if (useIcon) {
-          marker = L.marker([d.lat, d.lon], { icon: getIcon(cat, rank) });
+        if (ICONS[iconCat]) {
+          marker = L.marker([d.lat, d.lon], { icon: getIcon(iconCat, rank) });
         } else {
+          // Fallback path — every category has an icon, so this is rarely hit.
           marker = L.circleMarker([d.lat, d.lon], {
             radius: radiusFor(rank),
             fillColor: colorForRank(rank),
@@ -361,7 +380,7 @@ function(el, x) {
       } catch(e) {}
     });
     info.innerHTML = "<strong>" + n + "</strong> venue" + (n===1?"":"s") + " shown";
-    refreshLegend(useIcon ? "icon" : "spectral", cat);
+    refreshLegend(cat === "All categories" ? "all" : "icon", cat);
 
     if (name && bounds.length === 1) {
       map.flyTo(bounds[0], 16, {duration: 0.6});
