@@ -1,3 +1,10 @@
+---
+title: "Brighton Restaurant Awards (BRAVO) 2026 — Interactive Map"
+description: "Interactive map of all BRAVO Award Category winners and rankings, 2026"
+site: index.html   # path under the Pages root — use this when there's no working index.html
+image: https://github.com/adamdennett/BrightonRestaurantsMap/blob/main/images/bravo2026.png            # relative path in the repo, or a full URL
+---
+
 # Brighton Restaurant Awards (BRAVO) 2026 — Interactive Map
 
 Interactive Leaflet map of every BRAVO 2026 winner across all 18 categories,
