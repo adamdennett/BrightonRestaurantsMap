@@ -23,3 +23,6 @@ bravo_2026_winners_geocoded.rds
 .DS_Store
 Thumbs.db
 .positai
+
+# Claude Code worktrees (never track these)
+.claude/
